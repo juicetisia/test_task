@@ -1,0 +1,62 @@
+- Set VPC on free AWS account
+
+- Set up DocumentDB 2+1 replica set (one for write and two for reading)
+
+- Set ECR and pull our Node.js DB service from DockerHub (docker pull incodetech/ms-incode-database:staging_smile). For this I will need your Docker ID or email address registered with the DockerHub
+
+- Create task definition for DB service with proper env variables. This is the list we use currently to properly run DB service
+
+ 
+
+ {
+
+          "name": "appname",
+
+          "value": "DBL_DEMO_SMILE"
+
+        },
+
+        {
+
+          "name": "mongohost",
+
+          "value": “HOST_OF_YOUR_DOCUMENTDB"
+
+        },
+
+        {
+
+          "name": "password",
+
+          "value": “PASSWORD_OF_YOUR_DOCUMENTDB"
+
+        },
+
+        {
+
+          "name": "replicaSet",
+
+          "value": "rs0"
+
+        },
+
+        {
+
+          "name": "ssl",
+
+          "value": "true"
+
+        },
+
+        {
+
+          "name": "user",
+
+          "value": “USERNAME_OF_YOUR_DOCUMENTDB"
+
+        }
+
+
+- Create ECS that runs task definition together with proper LB and TG
+
+- Set auto-scaling rules based on CPU and Memory (>75%)
