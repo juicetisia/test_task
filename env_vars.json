@@ -1,0 +1,26 @@
+[{
+  "name": "appname",
+  "value": "nodedb"
+
+},
+{
+  "name": "mongohost",
+  "value": ""
+},
+{
+  "name": "password",
+  "value": "admin123"
+},
+{
+  "name": "replicaSet",
+  "value": "rs0"
+},
+{
+  "name": "ssl",
+  "value": "true"
+},
+{
+  "name": "user",
+  "value": "asokova"
+}
+]

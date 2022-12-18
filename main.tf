@@ -1,11 +1,15 @@
+# main.tf | Main Configuration
+
 terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
+      version = "2.70.0"
     }
   }
+
 }
 
 provider "aws" {
-  region = "eu-central-1"
+  region = var.aws_region
 }
